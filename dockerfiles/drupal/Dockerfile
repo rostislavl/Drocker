@@ -31,6 +31,6 @@ VOLUME ["/var/www/default"]
 
 #--------------------  Entrypoint -------------------------------------
 
-COPY entrypoint.sh /entrypoint.sh
-RUN chmod 755 /entrypoint.sh
-ENTRYPOINT ["/entrypoint.sh"]
+COPY start.sh /start.sh
+RUN chmod 755 /start.sh
+CMD ["/bin/bash", "/start.sh"]
