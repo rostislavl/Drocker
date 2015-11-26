@@ -1,0 +1,72 @@
+# Rename this file to site.conf or YOUR-SITE-NAME.conf
+
+server {
+        listen 80;
+        server_name localhost;
+
+        client_max_body_size 20M;
+
+        access_log /var/log/nginx/$host.access.log;
+        error_log /var/log/nginx/$host.error.log;
+
+        root /var/www/default;
+        index index.php;
+
+
+        error_page 404 index.php;
+
+        # Very rarely should these ever be accessed outside of your lan
+        location ~* \.(txt|log)$ {
+                allow 127.0.0.1;
+                deny all;
+        }
+
+        location ~*.(.htaccess|engine|inc|info|install|module|profile|po|sh|.*sql|theme|tpl(.php)?|xtmpl)$ {
+                deny all;
+        }
+
+        # This denies access to .git, .svn, .htaccess and similar files in any subdirectory.
+        location ~ /\.  {
+                return 403;
+        }
+
+        location = /favicon.ico {
+                log_not_found off;
+                access_log off;
+        }
+
+        location = /robots.txt {
+                allow all;
+                log_not_found off;
+                access_log off;
+        }
+
+        # This matters if you use drush
+        location = /backup {
+                deny all;
+        }
+
+
+        location ~ \..*/.*\.php$ {
+                return 403;
+        }
+
+
+        location / {
+             try_files $uri /index.php?$query_string; # For Drupal >= 7
+        }
+
+
+        # serve static files directly
+        location ~* ^.+.(jpg|jpeg|gif|css|png|js|ico)$ {
+                access_log off;
+                expires 30d;
+        }
+
+        location ~ .php$ {
+                fastcgi_pass	unix:/var/run/php5-fpm.sock; #   127.0.0.1:9000;
+                fastcgi_index  index.php;
+                fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
+                include fastcgi_params;
+        }
+}
