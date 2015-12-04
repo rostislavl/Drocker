@@ -1,0 +1,65 @@
+name = Your-drupal-profile
+description = your-drupal-profile description
+version = 7.1
+core = 7.x
+
+
+; Drupal Core Modules
+dependencies[] = block
+dependencies[] = contextual
+dependencies[] = dashboard
+dependencies[] = image
+dependencies[] = list
+dependencies[] = menu
+dependencies[] = number
+dependencies[] = options
+dependencies[] = path
+dependencies[] = taxonomy
+dependencies[] = dblog
+dependencies[] = shortcut
+dependencies[] = translation
+dependencies[] = toolbar
+dependencies[] = overlay
+dependencies[] = field_ui
+dependencies[] = file
+dependencies[] = rdf
+dependencies[] = color
+dependencies[] = comment
+dependencies[] = search
+dependencies[] = help
+
+
+
+; Downloaded Modules
+dependencies[] = views
+;dependencies[] = eck
+;dependencies[] = admin_menu
+;dependencies[] = field_collection
+;dependencies[] = ctools
+;dependencies[] = features
+;dependencies[] = module_filter
+;dependencies[] = restful
+;dependencies[] = entity
+;dependencies[] = migrate
+;dependencies[] = migrate_extras
+;dependencies[] = migrate_ui
+;dependencies[] = link
+;dependencies[] = role_delegation
+;dependencies[] = bueditor
+;dependencies[] = ajax_markup
+;dependencies[] = markdown
+;dependencies[] = markdowneditor
+;dependencies[] = i18n_menu
+;dependencies[] = variable
+;dependencies[] = pathauto
+;dependencies[] = colorbox
+;dependencies[] = views
+;dependencies[] = views_ui
+;dependencies[] = date
+;dependencies[] = date_popup
+;dependencies[] = replicate
+;dependencies[] = replicate_field_collection
+;dependencies[] = replicate_ui
+
+;Theme
+dependencies[] = bootstrap_business

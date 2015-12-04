@@ -1,0 +1,34 @@
+front:
+  build: .
+  ports:
+    - "80:80"
+#    - "443:443"
+    - "9000"
+  links:
+    - mysql:mysql
+  volumes:
+    - ./www/drupal:/var/www/drupal
+    - ./conf/nginx-sites:/etc/nginx/conf.d
+    - ./logs:/var/log/supervisor
+  environment:
+    - DRUPAL_BASE_DIR=drupal
+    - DRUPAL_SITE_0_PROFILE=standard
+    - DRUPAL_SITE_0_ACCOUNT_NAME=admin
+    - DRUPAL_SITE_0_ACCOUNT_PASS=admin
+
+    - DRUPAL_SITE_0_MYSQL_DATABASE=drupal
+    - DRUPAL_SITE_0_MYSQL_USER=drupal
+    - DRUPAL_SITE_0_MYSQL_PASSWORD=drupal
+
+
+
+
+mysql:
+  image: mysql
+  ports:
+    - "3306"
+  environment:
+    - MYSQL_ROOT_PASSWORD=password
+    - MYSQL_DATABASE=drupal
+    - MYSQL_USER=drupal
+    - MYSQL_PASSWORD=drupal

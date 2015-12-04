@@ -1,0 +1,4 @@
+# Ignore NGINX site's configuration files
+conf/nginx/conf.d/*.conf
+conf/drupal-profiles/sevacms
+www/*
