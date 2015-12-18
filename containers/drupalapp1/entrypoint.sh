@@ -16,4 +16,5 @@ if [ ! -f /var/www/$DRUPAL_BASE_DIR/www/index.php ]; then
 
 fi
 
-/usr/bin/supervisord
+#/usr/bin/supervisord
+php-fpm

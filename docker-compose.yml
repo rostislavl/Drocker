@@ -1,15 +1,27 @@
-front:
-  build: .
+nginx:
+  build: ./containers/nginx
+  container_name: nginx
   ports:
     - "80:80"
-#    - "443:443"
+  volumes:
+    - ./conf/nginx-sites:/etc/nginx/conf.d
+    - ./log/nginx:/var/log/nginx
+    - ./www/drupal:/var/www/drupal
+  links:
+    - drupalapp1:drupalapp1
+
+
+drupalapp1:
+  build: ./containers/drupalapp1
+  container_name: drupalapp1
+  ports:
     - "9000"
   links:
     - mysql:mysql
+
   volumes:
     - ./www/drupal:/var/www/drupal
-    - ./conf/nginx-sites:/etc/nginx/conf.d
-    - ./logs:/var/log/supervisor
+    #- ./log/drupalapp1:/var/log
   environment:
     - DRUPAL_BASE_DIR=drupal
     - DRUPAL_SITE_0_PROFILE=standard
@@ -22,9 +34,9 @@ front:
 
 
 
-
 mysql:
   image: mysql
+  container_name: mysql
   ports:
     - "3306"
   environment:
