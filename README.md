@@ -1,8 +1,10 @@
 # Drudocker
 
-> Dockerized Drupal development stack: Nginx, MySQL, PHP-FPM
+> Dockerized Drupal development stack: Nginx, MySQL, PHP-FPM, Drush
 
-Drudocker gives you everything you need for developing PHP applications locally. The idea came from the need of having an OS-agnostic and virtualized alternative to the great [MNPP](https://github.com/jyr/MNPP) stack as regular LAMP stacks quite simply can't keep up with the Nginx + PHP-FPM/HHVM combo in terms of performance. I hope you'll find it as useful an addition to your dev-arsenal as I've found it!
+Drudocker gives you everything you need for developing PHP applications locally. 
+The idea came from the need of having an OS-agnostic and virtualized alternative to the great [MNPP](https://github.com/jyr/MNPP) stack as regular NAMP stacks quite simply can't keep up with the Nginx + PHP-FPM combo in terms of performance. 
+I hope you'll find it as useful!
 
 ## What's inside
 
