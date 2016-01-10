@@ -12,5 +12,6 @@ RUN apt-get update && apt-get install -y git curl \
     && composer update \
     && composer install
 
-
-
+COPY ./drush.make /var/www/
+COPY ./entrypoint.sh /
+ENTRYPOINT ["/entrypoint.sh"]
