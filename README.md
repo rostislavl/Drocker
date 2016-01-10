@@ -30,7 +30,8 @@ That's it! You can now access your configured sites via the IP address of the Do
 
 ## License
 
-Copyright &copy; 2015 [Rostislav Levkovic](http://github.com/rostislavl). Licensed under the terms of the [MIT license](LICENSE.md).
+Copyright &copy; 2015 [CN Group](http://cngroup.dk/). Licensed under the terms of the [MIT license](LICENSE.md).
+Maintainer [Rostislav Levkovic](http://github.com/rostislavl). 
 
 ## Credits
 
