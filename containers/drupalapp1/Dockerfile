@@ -14,4 +14,6 @@ RUN apt-get update && apt-get install -y git curl \
 
 COPY ./drush.make /var/www/
 COPY ./entrypoint.sh /
+RUN chmod 755 /entrypoint.sh
+
 ENTRYPOINT ["/entrypoint.sh"]
