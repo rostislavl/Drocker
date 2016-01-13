@@ -1,0 +1,16 @@
+# See example makefile here https://raw.githubusercontent.com/drush-ops/drush/master/examples/example.make.yml
+
+# Core version
+core: "7.x"
+
+# Drush API version
+api: 2
+
+# Core project
+projects:
+  drupal:
+    version: ~
+
+  # Projects
+  views:
+    version: ~
